@@ -15,6 +15,7 @@ def setup():
 
 @with_setup(setup())
 def test_encrypt_takes_a_string_and_offset_as_arguments():
+
     assert_raises(TypeError, encrypt)
     assert_raises(TypeError, encrypt, cleartext)
 
@@ -25,7 +26,7 @@ def test_encrypt_raises_ValueError_if_called_with_empty_string():
     assert_equal(e.exception.message, 'can not encrypt empty string')
 
 
-# Detta test kan kommenteras bort om man inte vill testa 'Undantagshantering' på C eller A-nivå
+ #Detta test kan kommenteras bort om man inte vill testa 'Undantagshantering' på C eller A-nivå
 def test_encrypt_raises_ValueError_if_called_with_zero_offset():
     with assert_raises(ValueError) as e:
         encrypt(cleartext, 0)
